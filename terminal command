@@ -1,2 +1,2 @@
-xbc4000@cube4000 ~ $ ffmpeg -f x11grab -r 12 -s 1920x1080 -i :0.0+0,0 -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 -vf 'scale=800:600' /dev/video2
+ffmpeg -f x11grab -r 12 -s 1920x1080 -i :0.0+0,0 -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 -vf 'scale=800:600' /dev/video2
 
