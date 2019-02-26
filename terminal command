@@ -1,2 +1,6 @@
+#Fake Desktop Cam
 ffmpeg -f x11grab -r 12 -s 1920x1080 -i :0.0+0,0 -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 -vf 'scale=800:600' /dev/video2
 
+
+#Desktop to TV over DLNA
+ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 20 -s 1920x1080 -i :0.0+0,0 -acodec ac3 -ac 1 -vcodec libx264 -vpre fast -threads 0 -f matroska ~/Videos/capture.mkv
